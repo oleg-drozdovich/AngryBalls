@@ -1,4 +1,4 @@
-#ifndef OBJECTCIRCLE_H_
+п»ї#ifndef OBJECTCIRCLE_H_
 #define OBJECTCIRCLE_H_
 
 
@@ -11,11 +11,11 @@ class CObjectCircle : public CObject
 public:
 	CObjectCircle( const GLvector &vPosition, const GLvector &vSpeed, GLuint uRGBA, GLuint uRadius );
 
-	virtual void OnDraw();											// отрисовка объекта
-	virtual void OnUpdate();										// обновляет состояние объекта
-	virtual bool IsContaines( const GLvector &vPosition ) const;	// метод проверяет - лежит ли точка внутри объекта
-	virtual bool IsContained( const GLvector &vBoxSize ) const;		// метод проверяет - лежит ли объект внутри прямоугольника
-	virtual	int GetHitPoints() const;								// возращает кол-во очков за попадание
+	virtual void OnDraw();											// РѕС‚СЂРёСЃРѕРІРєР° РѕР±СЉРµРєС‚Р°
+	virtual void OnUpdate();										// РѕР±РЅРѕРІР»СЏРµС‚ СЃРѕСЃС‚РѕСЏРЅРёРµ РѕР±СЉРµРєС‚Р°
+	virtual bool IsContaines( const GLvector &vPosition ) const;	// РјРµС‚РѕРґ РїСЂРѕРІРµСЂСЏРµС‚ - Р»РµР¶РёС‚ Р»Рё С‚РѕС‡РєР° РІРЅСѓС‚СЂРё РѕР±СЉРµРєС‚Р°
+	virtual bool IsContained( const GLvector &vBoxSize ) const;		// РјРµС‚РѕРґ РїСЂРѕРІРµСЂСЏРµС‚ - Р»РµР¶РёС‚ Р»Рё РѕР±СЉРµРєС‚ РІРЅСѓС‚СЂРё РїСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРєР°
+	virtual	int GetHitPoints() const;								// РІРѕР·СЂР°С‰Р°РµС‚ РєРѕР»-РІРѕ РѕС‡РєРѕРІ Р·Р° РїРѕРїР°РґР°РЅРёРµ
 	virtual ~CObjectCircle();
 };
 

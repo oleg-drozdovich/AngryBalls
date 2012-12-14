@@ -1,4 +1,4 @@
-#include <assert.h>
+﻿#include <assert.h>
 #include <stdlib.h>
 
 #include "Factory.h"
@@ -16,7 +16,7 @@ CObject* CFactory::CreateFallingCircle()
 {
 	int			size, index;
 	GLvector	vPosition, vSpeed, vScreenSize;
-	GLuint		uRadius, uRGBA, uWidth;
+	GLuint		uRadius, uRGBA;
 
 	size	= sizeof( __Colors ) / sizeof( GLuint );		// размер массива RGB
 	index	= rand() % size;								// случайный индекс в массиве RGB

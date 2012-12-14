@@ -1,4 +1,4 @@
-#include <math.h>
+ï»¿#include <math.h>
 #include <stdlib.h>
 
 #include "ObjectCircle.h"
@@ -20,14 +20,14 @@ CObjectCircle::~CObjectCircle()
 
 void CObjectCircle::OnDraw()
 {
-	// ðèñóåì êðóã
+	// Ñ€Ð¸ÑÑƒÐµÐ¼ ÐºÑ€ÑƒÐ³
 	GLUtils::guDrawCircle( __vPosition, __uRadius, __uRGBA );
 }
 
 void CObjectCircle::OnUpdate()
 {
 	clock_t clock = CGame::Instance().GetUpdateClock();		
-	// ñäâèãàåì êðóã íà ðàññòîÿíèå t * V
+	// ÑÐ´Ð²Ð¸Ð³Ð°ÐµÐ¼ ÐºÑ€ÑƒÐ³ Ð½Ð° Ñ€Ð°ÑÑÑ‚Ð¾ÑÐ½Ð¸Ðµ t * V
 	if( __vSpeed.fX )
 	{
 		__vPosition.fX += ( clock / 1000.0 ) * __vSpeed.fX;
@@ -40,7 +40,7 @@ void CObjectCircle::OnUpdate()
 
 bool CObjectCircle::IsContaines( const GLvector &vPosition ) const
 {
-	// òî÷êà âíóòðè êðóãà?
+	// Ñ‚Ð¾Ñ‡ÐºÐ° Ð²Ð½ÑƒÑ‚Ñ€Ð¸ ÐºÑ€ÑƒÐ³Ð°?
 	if( __uRadius >= sqrt( pow( vPosition.fX - __vPosition.fX, 2 ) + pow( vPosition.fY - __vPosition.fY, 2 ) ) )
 	{
 		return true;
@@ -53,7 +53,7 @@ bool CObjectCircle::IsContaines( const GLvector &vPosition ) const
 
 bool CObjectCircle::IsContained( const GLvector &vBoxSize ) const
 {
-	// îêðóæíîñòü öåëèêîì â ïðÿìîóãîëüíîé îáëàñòè?
+	// Ð¾ÐºÑ€ÑƒÐ¶Ð½Ð¾ÑÑ‚ÑŒ Ñ†ÐµÐ»Ð¸ÐºÐ¾Ð¼ Ð² Ð¿Ñ€ÑÐ¼Ð¾ÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¾Ð¹ Ð¾Ð±Ð»Ð°ÑÑ‚Ð¸?
 	if(	( __vPosition.fX - __uRadius ) > 0 &&
 		( __vPosition.fY - __uRadius ) > 0 &&
 		( __vPosition.fX + __uRadius ) < vBoxSize.fX &&

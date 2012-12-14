@@ -79,7 +79,6 @@ private:
 		strcat( zBuffer, "\r\n" );
 		length += 2;
 		pstFile = fopen( __zFileName, "a" );
-
 		if( pstFile )
 		{
 			fwrite( zBuffer, 1, length, pstFile );

@@ -1,4 +1,4 @@
-#include <algorithm>
+﻿#include <algorithm>
 #include <assert.h>
 
 #include "Game.h"
@@ -10,6 +10,16 @@ CGame::CGame() :	__fPeriod( 0.4 ),			// время между созданием
 					__Factory( new CFactory() )	// создаем фабрику
 {
 	srand ( time( NULL ) );
+}
+
+CGame::~CGame()
+{
+	TObjects::iterator i = __Objects.begin();
+
+	while( i != __Objects.end() )
+	{
+		i = RemoveObject( *i );	
+	}
 }
 
 void CGame::DoMouseDown( GLvector *pMouse )		// вызываем при нажатии кнопкой мышки в окне

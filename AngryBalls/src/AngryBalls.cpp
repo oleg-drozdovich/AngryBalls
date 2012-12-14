@@ -1,4 +1,4 @@
-// AngryBalls.cpp : Defines the entry point for the application.
+п»ї// AngryBalls.cpp : Defines the entry point for the application.
 //
 
 #include <windows.h>
@@ -24,34 +24,34 @@ int WINAPI WinMain(	HINSTANCE	hInstance,
 
 	MSG		msg;			
 	bool	isQuit = false;	
-	CGame	&game = CGame::Instance();					// создаем объект Game
+	CGame	&game = CGame::Instance();					// СЃРѕР·РґР°РµРј РѕР±СЉРµРєС‚ Game
 
-	// создаем окно
+	// СЃРѕР·РґР°РµРј РѕРєРЅРѕ
 	try
 	{
 		if( !GLUtils::guCreateWindow( "Angry Balls", WndProc, SCREEN_WIDTH, SCREEN_HEIGHT ) )		
 		{
 			throw std::exception();							
 		}
-		// создаем шрифт
+		// СЃРѕР·РґР°РµРј С€СЂРёС„С‚
 		if( !GLUtils::guCreateFont( "Courier New" ) )		
 		{
 			throw std::exception();	
 		}
 
-		glEnableClientState( GL_VERTEX_ARRAY );				// включаем режим массива для вершин
-		glEnableClientState( GL_COLOR_ARRAY );				// и цветов
+		glEnableClientState( GL_VERTEX_ARRAY );				// РІРєР»СЋС‡Р°РµРј СЂРµР¶РёРј РјР°СЃСЃРёРІР° РґР»СЏ РІРµСЂС€РёРЅ
+		glEnableClientState( GL_COLOR_ARRAY );				// Рё С†РІРµС‚РѕРІ
 
-		glViewport( 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT );	// сброс текущей области вывода
-		glMatrixMode( GL_PROJECTION );						// выбор матрицы проекций
-		glLoadIdentity();									// сброс матрицы проекции
-		glOrtho( 0.0f, SCREEN_WIDTH, SCREEN_HEIGHT, 0.0f, 2.0f, -2.0f );	// устанавливаем ортогональную проекцию модели
-		glMatrixMode( GL_MODELVIEW );						// выбор матрицы вида модели
-		glLoadIdentity();									// сброс матрицы вида модели
+		glViewport( 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT );	// СЃР±СЂРѕСЃ С‚РµРєСѓС‰РµР№ РѕР±Р»Р°СЃС‚Рё РІС‹РІРѕРґР°
+		glMatrixMode( GL_PROJECTION );						// РІС‹Р±РѕСЂ РјР°С‚СЂРёС†С‹ РїСЂРѕРµРєС†РёР№
+		glLoadIdentity();									// СЃР±СЂРѕСЃ РјР°С‚СЂРёС†С‹ РїСЂРѕРµРєС†РёРё
+		glOrtho( 0.0f, SCREEN_WIDTH, SCREEN_HEIGHT, 0.0f, 2.0f, -2.0f );	// СѓСЃС‚Р°РЅР°РІР»РёРІР°РµРј РѕСЂС‚РѕРіРѕРЅР°Р»СЊРЅСѓСЋ РїСЂРѕРµРєС†РёСЋ РјРѕРґРµР»Рё
+		glMatrixMode( GL_MODELVIEW );						// РІС‹Р±РѕСЂ РјР°С‚СЂРёС†С‹ РІРёРґР° РјРѕРґРµР»Рё
+		glLoadIdentity();									// СЃР±СЂРѕСЃ РјР°С‚СЂРёС†С‹ РІРёРґР° РјРѕРґРµР»Рё
 
 		while( !isQuit )								
 		{
-			if( PeekMessage( &msg, NULL, 0, 0, PM_REMOVE ) ) // берем сообщение из очереди, если есть
+			if( PeekMessage( &msg, NULL, 0, 0, PM_REMOVE ) ) // Р±РµСЂРµРј СЃРѕРѕР±С‰РµРЅРёРµ РёР· РѕС‡РµСЂРµРґРё, РµСЃР»Рё РµСЃС‚СЊ
 			{
 				if( msg.message == WM_QUIT )					
 				{
@@ -59,8 +59,8 @@ int WINAPI WinMain(	HINSTANCE	hInstance,
 				}
 				else										
 				{
-					TranslateMessage( &msg );				// транслейтим месагу		
-					DispatchMessage( &msg );				// и диспатчим
+					TranslateMessage( &msg );				// С‚СЂР°РЅСЃР»РµР№С‚РёРј РјРµСЃР°РіСѓ		
+					DispatchMessage( &msg );				// Рё РґРёСЃРїР°С‚С‡РёРј
 				}
 			}
 			else									
@@ -68,7 +68,7 @@ int WINAPI WinMain(	HINSTANCE	hInstance,
 				game.DoUpdate();
 				game.DoDraw();
 
-				SwapBuffers( GLUtils::__hDC );				// меняем буфера
+				SwapBuffers( GLUtils::__hDC );				// РјРµРЅСЏРµРј Р±СѓС„РµСЂР°
 			}
 		}
 		GLUtils::guDeleteWindow();
@@ -92,7 +92,7 @@ LRESULT CALLBACK WndProc(	HWND	hWnd,
 							WPARAM	wParam,			
 							LPARAM	lParam)			
 {
-	switch ( uMsg )		// обрабатываем сообщения							
+	switch ( uMsg )		// РѕР±СЂР°Р±Р°С‚С‹РІР°РµРј СЃРѕРѕР±С‰РµРЅРёСЏ							
 	{
 		case WM_CLOSE:							
 		{

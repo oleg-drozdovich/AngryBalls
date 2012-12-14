@@ -1,4 +1,4 @@
-#ifndef GLUTILS_H_
+﻿#ifndef GLUTILS_H_
 #define GLUTILS_H_
 
 #include <windows.h>		

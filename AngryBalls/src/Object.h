@@ -1,4 +1,4 @@
-#ifndef COBJECT_H_
+п»ї#ifndef COBJECT_H_
 #define COBJECT_H_
 
 #include "Utils\GLUtils.h"
@@ -10,11 +10,11 @@ protected:
 	GLvector	__vSpeed;
 	GLuint		__uRGBA;
 public:
-	virtual void OnDraw() = 0;											// отрисовка объекта
-	virtual void OnUpdate() = 0;										// обновляет состояние объекта
-	virtual bool IsContaines( const GLvector &vPosition ) const = 0;	// метод проверяет - лежит ли точка внутри объекта
-	virtual bool IsContained( const GLvector &vBoxSize ) const = 0;		// метод проверяет - лежит ли объект внутри прямоугольника
-	virtual int	GetHitPoints() const = 0;								// возращает кол-во очков за попадание
+	virtual void OnDraw() = 0;											// РѕС‚СЂРёСЃРѕРІРєР° РѕР±СЉРµРєС‚Р°
+	virtual void OnUpdate() = 0;										// РѕР±РЅРѕРІР»СЏРµС‚ СЃРѕСЃС‚РѕСЏРЅРёРµ РѕР±СЉРµРєС‚Р°
+	virtual bool IsContaines( const GLvector &vPosition ) const = 0;	// РјРµС‚РѕРґ РїСЂРѕРІРµСЂСЏРµС‚ - Р»РµР¶РёС‚ Р»Рё С‚РѕС‡РєР° РІРЅСѓС‚СЂРё РѕР±СЉРµРєС‚Р°
+	virtual bool IsContained( const GLvector &vBoxSize ) const = 0;		// РјРµС‚РѕРґ РїСЂРѕРІРµСЂСЏРµС‚ - Р»РµР¶РёС‚ Р»Рё РѕР±СЉРµРєС‚ РІРЅСѓС‚СЂРё РїСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРєР°
+	virtual int	GetHitPoints() const = 0;								// РІРѕР·СЂР°С‰Р°РµС‚ РєРѕР»-РІРѕ РѕС‡РєРѕРІ Р·Р° РїРѕРїР°РґР°РЅРёРµ
 	virtual ~CObject(){};
 };
 

@@ -1,4 +1,4 @@
-#ifndef LOCKER_H_
+﻿#ifndef LOCKER_H_
 #define LOCKER_H_
 
 #if defined _WINDOWS
