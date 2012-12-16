@@ -31,7 +31,14 @@ private:
 class auto_lock
 {
 public:
-    auto_lock() { __lock = PTHREAD_MUTEX_INITIALIZER; }
+    auto_lock()
+	{
+		#ifdef ANDROID
+			__lock = PTHREAD_RECURSIVE_MUTEX_INITIALIZER;
+		#else
+			__lock = PTHREAD_RECURSIVE_MUTEX_INITIALIZER_NP;
+		#endif
+	}
 	~auto_lock() {}
     operator pthread_mutex_t&() { return __lock; }
 private:
